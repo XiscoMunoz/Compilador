@@ -1,0 +1,11 @@
+VARIABLE: Tglobal, tipo: TUPLA, nivel: 0
+CONSTANTE: T$Tglobal$0, tipo: INT, nivel: 0
+VARIABLE: T$Tglobal$1, tipo: INT, nivel: 0
+CONSTANTE: N, tipo: INT, nivel: 0
+VARIABLE: f, tipo: INT, nivel: 0
+VARIABLE: fact, tipo: INT, nivel: 0
+VARIABLE: nUsuario, tipo: INT, nivel: 0
+FUNCION: factorial, tipo: INT, nivel: 1
+	PARAMETRO: n, tipo: INT, nivel: 1
+	VARIABLE: fact, tipo: INT, nivel: 1
+	VARIABLE: i, tipo: INT, nivel: 1

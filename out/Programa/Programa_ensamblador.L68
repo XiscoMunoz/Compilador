@@ -1,0 +1,477 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 20/02/2023 17:08:02
+
+00001000                             1      org $1000
+00001000                             2  START:
+00001000  4EB9 0000134E              3      JSR SCREENSIZE
+00001006                             4  * -->[GOTO, null, null, run]
+00001006  4EF9 000010DA              5      JMP run
+0000100C                             6  * -->[SKIP, null, null, factorial]
+0000100C                             7  factorial:
+0000100C                             8  * -->[PMB, null, null, factorial]
+0000100C  33EF 0006 00001314         9      MOVE.W 6(A7),n_1
+00001014                            10  * -->[ASIG, 1, null, t3]
+00001014  33FC 0001 00001318        11      MOVE.W #1,t3
+0000101C                            12  * -->[ASIG, t3, null, fact_1]
+0000101C  33F9 00001318 00001316    13      MOVE.W t3,fact_1
+00001026                            14  * -->[ASIG, n_1, null, i_1]
+00001026  33F9 00001314 0000131A    15      MOVE.W n_1,i_1
+00001030                            16  * -->[SKIP, null, null, e1]
+00001030                            17  e1:
+00001030                            18  * -->[ASIG, 1, null, t4]
+00001030  33FC 0001 0000131C        19      MOVE.W #1,t4
+00001038                            20  * -->[MAYORIGU, i_1, t4, e2]
+00001038  3239 0000131A             21      MOVE.W i_1,D1
+0000103E  3039 0000131C             22      MOVE.W t4,D0
+00001044  B240                      23      CMP.W D0,D1
+00001046  6C00 0008                 24      BGE e2
+0000104A                            25  * -->[GOTO, null, null, e3]
+0000104A  4EF9 0000105E             26      JMP e3
+00001050                            27  * -->[SKIP, null, null, e2]
+00001050                            28  e2:
+00001050                            29  * -->[ASIG, -1, null, t5]
+00001050  33FC FFFF 0000131E        30      MOVE.W #-1,t5
+00001058                            31  * -->[GOTO, null, null, e4]
+00001058  4EF9 00001066             32      JMP e4
+0000105E                            33  * -->[SKIP, null, null, e3]
+0000105E                            34  e3:
+0000105E                            35  * -->[ASIG, 0, null, t5]
+0000105E  33FC 0000 0000131E        36      MOVE.W #0,t5
+00001066                            37  * -->[SKIP, null, null, e4]
+00001066                            38  e4:
+00001066                            39  * -->[IGUALES, t5, -1, e5]
+00001066  3239 0000131E             40      MOVE.W t5,D1
+0000106C  4881                      41      EXT.W D1
+0000106E  303C FFFF                 42      MOVE.W #-1,D0
+00001072  B240                      43      CMP.W D0,D1
+00001074  6700 0008                 44      BEQ e5
+00001078                            45  * -->[GOTO, null, null, e6]
+00001078  4EF9 000010CE             46      JMP e6
+0000107E                            47  * -->[SKIP, null, null, e5]
+0000107E                            48  e5:
+0000107E                            49  * -->[MULT, fact_1, i_1, t6]
+0000107E  3039 00001316             50      MOVE.W fact_1,D0
+00001084  48C0                      51      EXT.L D0
+00001086  3239 0000131A             52      MOVE.W i_1,D1
+0000108C  48C1                      53      EXT.L D1
+0000108E  C3C0                      54      MULS.W D0,D1
+00001090  33C1 00001322             55      MOVE.W D1,t6
+00001096                            56  * -->[ASIG, t6, null, fact_1]
+00001096  33F9 00001322 00001316    57      MOVE.W t6,fact_1
+000010A0                            58  * -->[ASIG, 1, null, t7]
+000010A0  33FC 0001 00001324        59      MOVE.W #1,t7
+000010A8                            60  * -->[RESTA, i_1, t7, t8]
+000010A8  3239 0000131A             61      MOVE.W i_1,D1
+000010AE  3039 00001324             62      MOVE.W t7,D0
+000010B4  4EB9 00001396             63      JSR IRESTA
+000010BA  33C1 00001326             64      MOVE.W D1,t8
+000010C0                            65  * -->[ASIG, t8, null, i_1]
+000010C0  33F9 00001326 0000131A    66      MOVE.W t8,i_1
+000010CA                            67  * -->[GOTO, null, null, e1]
+000010CA  4EF8 1030                 68      JMP e1
+000010CE                            69  * -->[SKIP, null, null, e6]
+000010CE                            70  e6:
+000010CE                            71  * -->[RTN, null, null, fact_1]
+000010CE  3F79 00001316 0004        72      MOVE.W fact_1,4(A7)
+000010D6  4E75                      73      RTS
+000010D8                            74  * -->[RTN, null, null, null]
+000010D8  4E75                      75      RTS
+000010DA                            76  * -->[SKIP, null, null, run]
+000010DA                            77  run:
+000010DA                            78  * -->[ASIG, 1006, null, t1]
+000010DA  33FC 03EE 0000130E        79      MOVE.W #1006,t1
+000010E2                            80  * -->[ASIG, t1, null, T$Tglobal_0$0_0]
+000010E2  33F9 0000130E 0000130C    81      MOVE.W t1,T$Tglobal_0$0_0
+000010EC                            82  * -->[ASIG, 1, null, t2]
+000010EC  33FC 0001 00001312        83      MOVE.W #1,t2
+000010F4                            84  * -->[ASIG, t2, null, N_0]
+000010F4  33F9 00001312 00001310    85      MOVE.W t2,N_0
+000010FE                            86  * -->[ASIG, N_0, null, f_0]
+000010FE  33F9 00001310 00001328    87      MOVE.W N_0,f_0
+00001108                            88  * -->[PARAM, null, null, f_0]
+00001108  3F39 00001328             89      MOVE.W f_0,-(A7)
+0000110E                            90  * -->[CALL, t9, null, factorial]
+0000110E  558F                      91      SUBA.L #2,A7
+00001110  4EB8 100C                 92      JSR factorial
+00001114  33DF 0000132C             93      MOVE.W (A7)+,t9
+0000111A  548F                      94      ADDA.L #2,A7
+0000111C                            95  * -->[ASIG, t9, null, fact_0]
+0000111C  33F9 0000132C 0000132A    96      MOVE.W t9,fact_0
+00001126                            97  * -->[SKIP, null, null, e7]
+00001126                            98  e7:
+00001126                            99  * -->[MENORQUE, fact_0, T$Tglobal_0$0_0, e8]
+00001126  3239 0000132A            100      MOVE.W fact_0,D1
+0000112C  3039 0000130C            101      MOVE.W T$Tglobal_0$0_0,D0
+00001132  B240                     102      CMP.W D0,D1
+00001134  6D00 0008                103      BLT e8
+00001138                           104  * -->[GOTO, null, null, e9]
+00001138  4EF9 0000114C            105      JMP e9
+0000113E                           106  * -->[SKIP, null, null, e8]
+0000113E                           107  e8:
+0000113E                           108  * -->[ASIG, -1, null, t10]
+0000113E  33FC FFFF 0000132E       109      MOVE.W #-1,t10
+00001146                           110  * -->[GOTO, null, null, e10]
+00001146  4EF9 00001154            111      JMP e10
+0000114C                           112  * -->[SKIP, null, null, e9]
+0000114C                           113  e9:
+0000114C                           114  * -->[ASIG, 0, null, t10]
+0000114C  33FC 0000 0000132E       115      MOVE.W #0,t10
+00001154                           116  * -->[SKIP, null, null, e10]
+00001154                           117  e10:
+00001154                           118  * -->[IGUALES, t10, -1, e11]
+00001154  3239 0000132E            119      MOVE.W t10,D1
+0000115A  4881                     120      EXT.W D1
+0000115C  303C FFFF                121      MOVE.W #-1,D0
+00001160  B240                     122      CMP.W D0,D1
+00001162  6700 0008                123      BEQ e11
+00001166                           124  * -->[GOTO, null, null, e12]
+00001166  4EF9 000011B0            125      JMP e12
+0000116C                           126  * -->[SKIP, null, null, e11]
+0000116C                           127  e11:
+0000116C                           128  * -->[SUMA, f_0, N_0, t11]
+0000116C  3039 00001328            129      MOVE.W f_0,D0
+00001172  3239 00001310            130      MOVE.W N_0,D1
+00001178  4EB9 0000135C            131      JSR ISUMA
+0000117E  33C1 00001332            132      MOVE.W D1,t11
+00001184                           133  * -->[ASIG, t11, null, f_0]
+00001184  33F9 00001332 00001328   134      MOVE.W t11,f_0
+0000118E                           135  * -->[PARAM, null, null, f_0]
+0000118E  3F39 00001328            136      MOVE.W f_0,-(A7)
+00001194                           137  * -->[CALL, t12, null, factorial]
+00001194  558F                     138      SUBA.L #2,A7
+00001196  4EB8 100C                139      JSR factorial
+0000119A  33DF 00001334            140      MOVE.W (A7)+,t12
+000011A0  548F                     141      ADDA.L #2,A7
+000011A2                           142  * -->[ASIG, t12, null, fact_0]
+000011A2  33F9 00001334 0000132A   143      MOVE.W t12,fact_0
+000011AC                           144  * -->[GOTO, null, null, e7]
+000011AC  4EF8 1126                145      JMP e7
+000011B0                           146  * -->[SKIP, null, null, e12]
+000011B0                           147  e12:
+000011B0                           148  * -->[ASIG, f_0, null, T$Tglobal_0$1_0]
+000011B0  33F9 00001328 0000130A   149      MOVE.W f_0,T$Tglobal_0$1_0
+000011BA                           150  * -->[IN, null, null, t13]
+000011BA  558F                     151      SUBA.L #2,A7
+000011BC  4EB9 000013EE            152      JSR GETINT
+000011C2  33DF 00001338            153      MOVE.W (A7)+,t13
+000011C8                           154  * -->[ASIG, t13, null, nUsuario_0]
+000011C8  33F9 00001338 00001336   155      MOVE.W t13,nUsuario_0
+000011D2                           156  * -->[SKIP, null, null, e13]
+000011D2                           157  e13:
+000011D2                           158  * -->[NIGUALES, nUsuario_0, T$Tglobal_0$1_0, e14]
+000011D2  3239 00001336            159      MOVE.W nUsuario_0,D1
+000011D8  3039 0000130A            160      MOVE.W T$Tglobal_0$1_0,D0
+000011DE  B240                     161      CMP.W D0,D1
+000011E0  6600 0008                162      BNE e14
+000011E4                           163  * -->[GOTO, null, null, e15]
+000011E4  4EF9 000011F8            164      JMP e15
+000011EA                           165  * -->[SKIP, null, null, e14]
+000011EA                           166  e14:
+000011EA                           167  * -->[ASIG, -1, null, t14]
+000011EA  33FC FFFF 0000133A       168      MOVE.W #-1,t14
+000011F2                           169  * -->[GOTO, null, null, e16]
+000011F2  4EF9 00001200            170      JMP e16
+000011F8                           171  * -->[SKIP, null, null, e15]
+000011F8                           172  e15:
+000011F8                           173  * -->[ASIG, 0, null, t14]
+000011F8  33FC 0000 0000133A       174      MOVE.W #0,t14
+00001200                           175  * -->[SKIP, null, null, e16]
+00001200                           176  e16:
+00001200                           177  * -->[IGUALES, t14, -1, e17]
+00001200  3239 0000133A            178      MOVE.W t14,D1
+00001206  4881                     179      EXT.W D1
+00001208  303C FFFF                180      MOVE.W #-1,D0
+0000120C  B240                     181      CMP.W D0,D1
+0000120E  6700 0008                182      BEQ e17
+00001212                           183  * -->[GOTO, null, null, e18]
+00001212  4EF9 000012EC            184      JMP e18
+00001218                           185  * -->[SKIP, null, null, e17]
+00001218                           186  e17:
+00001218                           187  * -->[MENORQUE, nUsuario_0, T$Tglobal_0$1_0, e19]
+00001218  3239 00001336            188      MOVE.W nUsuario_0,D1
+0000121E  3039 0000130A            189      MOVE.W T$Tglobal_0$1_0,D0
+00001224  B240                     190      CMP.W D0,D1
+00001226  6D00 0008                191      BLT e19
+0000122A                           192  * -->[GOTO, null, null, e20]
+0000122A  4EF9 0000123E            193      JMP e20
+00001230                           194  * -->[SKIP, null, null, e19]
+00001230                           195  e19:
+00001230                           196  * -->[ASIG, -1, null, t15]
+00001230  33FC FFFF 0000133C       197      MOVE.W #-1,t15
+00001238                           198  * -->[GOTO, null, null, e21]
+00001238  4EF9 00001246            199      JMP e21
+0000123E                           200  * -->[SKIP, null, null, e20]
+0000123E                           201  e20:
+0000123E                           202  * -->[ASIG, 0, null, t15]
+0000123E  33FC 0000 0000133C       203      MOVE.W #0,t15
+00001246                           204  * -->[SKIP, null, null, e21]
+00001246                           205  e21:
+00001246                           206  * -->[IGUALES, t15, -1, e22]
+00001246  3239 0000133C            207      MOVE.W t15,D1
+0000124C  4881                     208      EXT.W D1
+0000124E  303C FFFF                209      MOVE.W #-1,D0
+00001252  B240                     210      CMP.W D0,D1
+00001254  6700 0008                211      BEQ e22
+00001258                           212  * -->[GOTO, null, null, e23]
+00001258  4EF9 00001274            213      JMP e23
+0000125E                           214  * -->[SKIP, null, null, e22]
+0000125E                           215  e22:
+0000125E                           216  * -->[ASIG, -1, null, t16]
+0000125E  33FC FFFF 00001340       217      MOVE.W #-1,t16
+00001266                           218  * -->[OUT, t16, null, null]
+00001266  3F39 00001340            219      MOVE.W t16,-(A7)
+0000126C  4EB9 000013D2            220      JSR PRINTINT
+00001272  548F                     221      ADDA.L #2,A7
+00001274                           222  * -->[SKIP, null, null, e23]
+00001274                           223  e23:
+00001274                           224  * -->[MAYORQUE, nUsuario_0, T$Tglobal_0$1_0, e24]
+00001274  3239 00001336            225      MOVE.W nUsuario_0,D1
+0000127A  3039 0000130A            226      MOVE.W T$Tglobal_0$1_0,D0
+00001280  B240                     227      CMP.W D0,D1
+00001282  6E00 0008                228      BGT e24
+00001286                           229  * -->[GOTO, null, null, e25]
+00001286  4EF9 0000129A            230      JMP e25
+0000128C                           231  * -->[SKIP, null, null, e24]
+0000128C                           232  e24:
+0000128C                           233  * -->[ASIG, -1, null, t17]
+0000128C  33FC FFFF 00001342       234      MOVE.W #-1,t17
+00001294                           235  * -->[GOTO, null, null, e26]
+00001294  4EF9 000012A2            236      JMP e26
+0000129A                           237  * -->[SKIP, null, null, e25]
+0000129A                           238  e25:
+0000129A                           239  * -->[ASIG, 0, null, t17]
+0000129A  33FC 0000 00001342       240      MOVE.W #0,t17
+000012A2                           241  * -->[SKIP, null, null, e26]
+000012A2                           242  e26:
+000012A2                           243  * -->[IGUALES, t17, -1, e27]
+000012A2  3239 00001342            244      MOVE.W t17,D1
+000012A8  4881                     245      EXT.W D1
+000012AA  303C FFFF                246      MOVE.W #-1,D0
+000012AE  B240                     247      CMP.W D0,D1
+000012B0  6700 0008                248      BEQ e27
+000012B4                           249  * -->[GOTO, null, null, e28]
+000012B4  4EF9 000012D0            250      JMP e28
+000012BA                           251  * -->[SKIP, null, null, e27]
+000012BA                           252  e27:
+000012BA                           253  * -->[ASIG, 0, null, t18]
+000012BA  33FC 0000 00001346       254      MOVE.W #0,t18
+000012C2                           255  * -->[OUT, t18, null, null]
+000012C2  3F39 00001346            256      MOVE.W t18,-(A7)
+000012C8  4EB9 000013D2            257      JSR PRINTINT
+000012CE  548F                     258      ADDA.L #2,A7
+000012D0                           259  * -->[SKIP, null, null, e28]
+000012D0                           260  e28:
+000012D0                           261  * -->[IN, null, null, t19]
+000012D0  558F                     262      SUBA.L #2,A7
+000012D2  4EB9 000013EE            263      JSR GETINT
+000012D8  33DF 00001348            264      MOVE.W (A7)+,t19
+000012DE                           265  * -->[ASIG, t19, null, nUsuario_0]
+000012DE  33F9 00001348 00001336   266      MOVE.W t19,nUsuario_0
+000012E8                           267  * -->[GOTO, null, null, e13]
+000012E8  4EF8 11D2                268      JMP e13
+000012EC                           269  * -->[SKIP, null, null, e18]
+000012EC                           270  e18:
+000012EC                           271  * -->[ASIG, 1, null, t20]
+000012EC  33FC 0001 0000134A       272      MOVE.W #1,t20
+000012F4                           273  * -->[OUT, t20, null, null]
+000012F4  3F39 0000134A            274      MOVE.W t20,-(A7)
+000012FA  4EB9 000013D2            275      JSR PRINTINT
+00001300  548F                     276      ADDA.L #2,A7
+00001302  FFFF FFFF                277      SIMHALT
+00001306                           278   
+00001306                           279  Tglobal_0: DS.W 1
+00001308= 0000                     280      DC.W 0
+0000130A                           281  T$Tglobal_0$1_0: DS.W 1
+0000130C                           282  T$Tglobal_0$0_0: DS.W 1
+0000130E                           283  t1: DS.W 1
+00001310                           284  N_0: DS.W 1
+00001312                           285  t2: DS.W 1
+00001314                           286  n_1: DS.W 1
+00001316                           287  fact_1: DS.W 1
+00001318                           288  t3: DS.W 1
+0000131A                           289  i_1: DS.W 1
+0000131C                           290  t4: DS.W 1
+0000131E                           291  t5: DS.W 1
+00001320= 0000                     292      DC.W 0
+00001322                           293  t6: DS.W 1
+00001324                           294  t7: DS.W 1
+00001326                           295  t8: DS.W 1
+00001328                           296  f_0: DS.W 1
+0000132A                           297  fact_0: DS.W 1
+0000132C                           298  t9: DS.W 1
+0000132E                           299  t10: DS.W 1
+00001330= 0000                     300      DC.W 0
+00001332                           301  t11: DS.W 1
+00001334                           302  t12: DS.W 1
+00001336                           303  nUsuario_0: DS.W 1
+00001338                           304  t13: DS.W 1
+0000133A                           305  t14: DS.W 1
+0000133C                           306  t15: DS.W 1
+0000133E= 0000                     307      DC.W 0
+00001340                           308  t16: DS.W 1
+00001342                           309  t17: DS.W 1
+00001344= 0000                     310      DC.W 0
+00001346                           311  t18: DS.W 1
+00001348                           312  t19: DS.W 1
+0000134A                           313  t20: DS.W 1
+0000134C= 0000                     314      DC.W 0
+0000134E                           315   
+0000134E                           316  SCREENSIZE:
+0000134E  223C 04000300            317      MOVE.L #1024*$10000+768,D1
+00001354  303C 0021                318      MOVE.W  #33,D0
+00001358  4E4F                     319      TRAP    #15
+0000135A  4E75                     320      RTS
+0000135C                           321  ISUMA:
+0000135C  0800 000F                322      BTST.L #15,D0
+00001360  6700 001E                323      BEQ ADD2
+00001364  4640                     324      NOT.W D0
+00001366  5240                     325      ADDQ.W #1,D0
+00001368  0801 000F                326      BTST.L #15,D1
+0000136C  6700 000E                327      BEQ ADD1
+00001370  4641                     328      NOT.W D1
+00001372  5241                     329      ADDQ.W #1,D1
+00001374  D240                     330      ADD.W D0,D1
+00001376  4641                     331      NOT.W D1
+00001378  5241                     332      ADDQ.W #1,D1
+0000137A  4E75                     333      RTS
+0000137C                           334  ADD1:
+0000137C  9240                     335      SUB.W D0,D1
+0000137E  4E75                     336      RTS
+00001380                           337  ADD2:
+00001380  0801 000F                338      BTST.L #15,D1
+00001384  6700 000C                339      BEQ ADD3
+00001388  4641                     340      NOT.W D1
+0000138A  5241                     341      ADDQ.W #1,D1
+0000138C  9041                     342      SUB.W D1,D0
+0000138E  3200                     343      MOVE.W  D0,D1
+00001390  4E75                     344      RTS
+00001392                           345  ADD3:
+00001392  D240                     346      ADD.W D0,D1
+00001394  4E75                     347      RTS
+00001396                           348  IRESTA:
+00001396  0801 000F                349      BTST.L #15,D1
+0000139A  6700 0022                350      BEQ SUB2
+0000139E  4641                     351      NOT.W D1
+000013A0  5241                     352      ADDQ.W #1,D1
+000013A2  0800 000F                353      BTST.L #15,D0
+000013A6  6700 000E                354      BEQ SUB1
+000013AA  4640                     355      NOT.W D0
+000013AC  5240                     356      ADDQ.W #1,D0
+000013AE  9240                     357      SUB.W D0,D1
+000013B0  4641                     358      NOT.W D1
+000013B2  5241                     359      ADDQ.W #1,D1
+000013B4  4E75                     360      RTS
+000013B6                           361  SUB1:
+000013B6  D240                     362      ADD.W D0,D1
+000013B8  4641                     363      NOT.W D1
+000013BA  5241                     364      ADDQ.W #1,D1
+000013BC  4E75                     365      RTS
+000013BE                           366  SUB2:
+000013BE  0800 000F                367      BTST.L #15,D0
+000013C2  6700 000A                368      BEQ SUB3
+000013C6  4640                     369      NOT.W D0
+000013C8  5240                     370      ADDQ.W #1,D0
+000013CA  D240                     371      ADD.W D0,D1
+000013CC  4E75                     372      RTS
+000013CE                           373  SUB3:
+000013CE  9240                     374      SUB.W D0,D1
+000013D0  4E75                     375      RTS
+000013D2                           376  PRINTINT:
+000013D2  322F 0004                377      MOVE.W 4(A7),D1
+000013D6  48C1                     378      EXT.L D1
+000013D8  7003                     379      MOVE.L #3,D0
+000013DA  4E4F                     380      TRAP #15
+000013DC  700B                     381      MOVE.L #11,D0
+000013DE  323C 00FF                382      MOVE.W #$00FF,D1
+000013E2  4E4F                     383      TRAP #15
+000013E4  5241                     384      ADD.W #1,D1
+000013E6  C27C 00FF                385      AND.W #$00FF,D1
+000013EA  4E4F                     386      TRAP #15
+000013EC  4E75                     387      RTS
+000013EE                           388  GETINT:
+000013EE  7004                     389      MOVE.L #4,D0
+000013F0  4E4F                     390      TRAP #15
+000013F2  3F41 0004                391      MOVE.W D1,4(A7)
+000013F6  4E75                     392      RTS
+000013F8                           393      END START
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+ADD1                137C
+ADD2                1380
+ADD3                1392
+E1                  1030
+E10                 1154
+E11                 116C
+E12                 11B0
+E13                 11D2
+E14                 11EA
+E15                 11F8
+E16                 1200
+E17                 1218
+E18                 12EC
+E19                 1230
+E2                  1050
+E20                 123E
+E21                 1246
+E22                 125E
+E23                 1274
+E24                 128C
+E25                 129A
+E26                 12A2
+E27                 12BA
+E28                 12D0
+E3                  105E
+E4                  1066
+E5                  107E
+E6                  10CE
+E7                  1126
+E8                  113E
+E9                  114C
+FACTORIAL           100C
+FACT_0              132A
+FACT_1              1316
+F_0                 1328
+GETINT              13EE
+IRESTA              1396
+ISUMA               135C
+I_1                 131A
+NUSUARIO_0          1336
+N_0                 1310
+N_1                 1314
+PRINTINT            13D2
+RUN                 10DA
+SCREENSIZE          134E
+START               1000
+SUB1                13B6
+SUB2                13BE
+SUB3                13CE
+T$TGLOBAL_0$0_0     130C
+T$TGLOBAL_0$1_0     130A
+T1                  130E
+T10                 132E
+T11                 1332
+T12                 1334
+T13                 1338
+T14                 133A
+T15                 133C
+T16                 1340
+T17                 1342
+T18                 1346
+T19                 1348
+T2                  1312
+T20                 134A
+T3                  1318
+T4                  131C
+T5                  131E
+T6                  1322
+T7                  1324
+T8                  1326
+T9                  132C
+TGLOBAL_0           1306

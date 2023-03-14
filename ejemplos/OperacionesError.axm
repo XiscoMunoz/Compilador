@@ -1,0 +1,38 @@
+declare {
+
+}
+main{    
+    bool vTrue = true;
+    bool vFalse = false;
+    int nMayor=100;
+    int nMenor=-1;
+    bool aux = nMenor; # Se intenta asignar un numero a un booleano.
+
+    if(nMayor > nMenor){
+        output(1);
+    }
+    if(nMayor + nMenor){ # Se intenta hacer una suma en un condicional.
+        output(2);
+    }
+    if(nMayor != nMenor){
+        output(3);
+    }
+    if(0 == 0){
+        output(4);
+    }
+    if(nMayor >= 100){
+        output(5);
+    }
+    if(nMenor <= -1){
+        output(6);
+    }
+
+    if(vTrue | nMayor){ # Intenta hacer una operación or con un numero.
+        output(7);
+    }
+    if(vTrue & vFalse){
+        output(8);
+    }
+
+    
+}

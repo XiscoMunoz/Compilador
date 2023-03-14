@@ -1,0 +1,50 @@
+declare{
+    # Calcula el factorial de un numero f, que será inicializado con el valor de la constante global N,
+    # este factorial se irá calculando para f + N, en el caso en que dicho resultado no sea mayor o igual
+    # al elemento constante de la tupla global Tglobal.
+
+    # Una vez se han realizado todos los factoriales, se pedirá al usuario que adivine este valor f final,
+    # haciendo uso de la entrada por teclado e indicando con un -1 que el numero buscado es mayor y con un 0
+    # el caso contrario. Cuando el usuario acierta el numero se imprime 1.
+
+    tupla [2] Tglobal = {1006,int}; # Tupla global {elemento constante, elemento variable}
+    const int N = 1; 
+
+    # Devuelve el factorial del numero pasado por parametro.
+    function int factorial(int n){
+
+        int fact = 1;
+        int i = n;
+
+        while(i >= 1){
+            fact = fact * i;
+            i = i - 1;
+        }
+        return fact;
+    }
+}main{
+    int f = N;
+    int fact = factorial(f);
+    # Bucle para comprobar si el factorial cumple con el requisito.
+    while(fact<Tglobal[0]){
+        f = f + N;
+        fact = factorial(f);
+    }
+
+    Tglobal[1]=f;
+    int nUsuario = input();
+    # Bucle que pide al usuario que acierte el numero.
+    while(nUsuario != Tglobal[1]){
+
+        if(nUsuario < Tglobal[1]){
+            output(-1); # Numero buscado es mayor
+        }
+
+        if(nUsuario > Tglobal[1]){
+            output(0); # Numero buscado es menor
+        }
+        nUsuario=input();
+    }
+
+    output(1); # Se ha acertado el numero
+}

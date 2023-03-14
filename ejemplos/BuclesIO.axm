@@ -1,0 +1,25 @@
+declare{
+
+}main{
+    # Multiplica los dos numeros pasados por teclado, utilizando un bucle do-while y otro while.
+    int condicion1 = input();
+    int condicion2 = input();
+    int incremento = 0;
+    int indice1 = 0;
+    int indice2 = 0;
+
+    do{
+
+        while(indice2 < condicion2){
+            indice2 = indice2 + 1;
+            incremento = incremento + 1;
+        }
+        
+    indice1 = indice1 + 1;
+    indice2 = 0;
+
+    }while(indice1< condicion1);
+
+    output(incremento);
+
+}

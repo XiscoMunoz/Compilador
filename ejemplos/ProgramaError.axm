@@ -1,0 +1,41 @@
+declare{
+    tupla [3] Tglobal = {1006,int}; # Se declaran menos elementos que la longitud definida.
+    tupla [-1] Tglobal2 = {1006,int}; # Se define una longitud negativa
+    const int N = 1;
+    int Res;
+
+    function int factorial(int n){
+        int fact = 1;
+        int i = n;
+        whie(i >= 1){ # While mal escrito
+            fact = fact * i;
+            i = i - 1;
+        }
+        return fact;
+    }
+
+
+}main{
+    int f = N;
+    int fact = factorial(f);
+    int fact = factorial(f,N); # Se intenta pasar mas parametros que los que se han establecido
+    while(fact<Tglobal[3]){ # Se intenta acceder a una posicion no existente
+        f = f + N;
+        fact = factorial(true); # Se intenta pasar un booleano por parametro numerico.
+    }
+
+    Tglobal[1]=f;
+
+    int nUsuario = input();
+    while(nUsuario != Tglobal[1]){
+        if(nUsuario < Tglobal[1]){
+            output(-1); # Numero buscado es mayor
+        }
+        if(nUsuario > Tglobal[1]){
+            output(0); # Numero buscado es menor
+        }
+        nUsuario=input();
+    }
+
+    output(1);
+}

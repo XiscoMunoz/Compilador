@@ -1,0 +1,4 @@
+VARIABLE: vTrue, tipo: BOOLEAN, nivel: 0
+VARIABLE: vFalse, tipo: BOOLEAN, nivel: 0
+VARIABLE: nMayor, tipo: INT, nivel: 0
+VARIABLE: nMenor, tipo: INT, nivel: 0

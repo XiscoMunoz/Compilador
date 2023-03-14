@@ -1,0 +1,34 @@
+declare{
+
+    # Se declaran los 3 tipos de subprogramas, int, boolean y sin retorno. Dado dos numeros
+    # se comprueba si uno es menor o igual al otro, y dependiendo del resultado se realiza la 
+    # multiplicación o la suma.
+
+    int m;
+
+    function int funcion1 (int m, int n, bool condicion){
+
+        if(condicion){
+            return m * n;
+        }
+        return m + n;
+    } 
+
+    function bool funcion2 (int m, int n){
+
+        return m <= n ;
+
+    }
+
+    function funcion3(){
+        int a = input();
+        int b = input();
+        bool aux = funcion2(a,b);
+        int aux2=funcion1(a,b,aux);
+        output(aux2);
+    }
+}
+main{
+    funcion3();
+
+}

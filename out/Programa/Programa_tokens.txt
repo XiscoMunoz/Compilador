@@ -1,0 +1,173 @@
+Symbol: DECLARE
+Symbol: LKEY
+Symbol: TUPLA
+Symbol: LCOR
+Symbol: NUMERO Valor: 2
+Symbol: RCOR
+Symbol: ID Valor: Tglobal
+Symbol: IGUAL
+Symbol: LKEY
+Symbol: NUMERO Valor: 1006
+Symbol: COMA
+Symbol: INT
+Symbol: RKEY
+Symbol: PUNTYCOMA
+Symbol: CONST
+Symbol: INT
+Symbol: ID Valor: N
+Symbol: IGUAL
+Symbol: NUMERO Valor: 1
+Symbol: PUNTYCOMA
+Symbol: FUNCTION
+Symbol: INT
+Symbol: ID Valor: factorial
+Symbol: LPAREN
+Symbol: INT
+Symbol: ID Valor: n
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: INT
+Symbol: ID Valor: fact
+Symbol: IGUAL
+Symbol: NUMERO Valor: 1
+Symbol: PUNTYCOMA
+Symbol: INT
+Symbol: ID Valor: i
+Symbol: IGUAL
+Symbol: ID Valor: n
+Symbol: PUNTYCOMA
+Symbol: WHILE
+Symbol: LPAREN
+Symbol: ID Valor: i
+Symbol: MAYORIGU
+Symbol: NUMERO Valor: 1
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: ID Valor: fact
+Symbol: IGUAL
+Symbol: ID Valor: fact
+Symbol: MULT
+Symbol: ID Valor: i
+Symbol: PUNTYCOMA
+Symbol: ID Valor: i
+Symbol: IGUAL
+Symbol: ID Valor: i
+Symbol: RESTA
+Symbol: NUMERO Valor: 1
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: RETRN
+Symbol: ID Valor: fact
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: RKEY
+Symbol: MAIN
+Symbol: LKEY
+Symbol: INT
+Symbol: ID Valor: f
+Symbol: IGUAL
+Symbol: ID Valor: N
+Symbol: PUNTYCOMA
+Symbol: INT
+Symbol: ID Valor: fact
+Symbol: IGUAL
+Symbol: ID Valor: factorial
+Symbol: LPAREN
+Symbol: ID Valor: f
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: WHILE
+Symbol: LPAREN
+Symbol: ID Valor: fact
+Symbol: MENORQUE
+Symbol: ID Valor: Tglobal
+Symbol: LCOR
+Symbol: NUMERO Valor: 0
+Symbol: RCOR
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: ID Valor: f
+Symbol: IGUAL
+Symbol: ID Valor: f
+Symbol: SUMA
+Symbol: ID Valor: N
+Symbol: PUNTYCOMA
+Symbol: ID Valor: fact
+Symbol: IGUAL
+Symbol: ID Valor: factorial
+Symbol: LPAREN
+Symbol: ID Valor: f
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: ID Valor: Tglobal
+Symbol: LCOR
+Symbol: NUMERO Valor: 1
+Symbol: RCOR
+Symbol: IGUAL
+Symbol: ID Valor: f
+Symbol: PUNTYCOMA
+Symbol: INT
+Symbol: ID Valor: nUsuario
+Symbol: IGUAL
+Symbol: IN
+Symbol: LPAREN
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: WHILE
+Symbol: LPAREN
+Symbol: ID Valor: nUsuario
+Symbol: NIGUALES
+Symbol: ID Valor: Tglobal
+Symbol: LCOR
+Symbol: NUMERO Valor: 1
+Symbol: RCOR
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: IF
+Symbol: LPAREN
+Symbol: ID Valor: nUsuario
+Symbol: MENORQUE
+Symbol: ID Valor: Tglobal
+Symbol: LCOR
+Symbol: NUMERO Valor: 1
+Symbol: RCOR
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: -1
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: IF
+Symbol: LPAREN
+Symbol: ID Valor: nUsuario
+Symbol: MAYORQUE
+Symbol: ID Valor: Tglobal
+Symbol: LCOR
+Symbol: NUMERO Valor: 1
+Symbol: RCOR
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: 0
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: ID Valor: nUsuario
+Symbol: IGUAL
+Symbol: IN
+Symbol: LPAREN
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: 1
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: EOF
+Symbol: EOF

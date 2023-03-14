@@ -1,0 +1,5 @@
+	Errores semantico:
+	 - Tipo BOOLEAN no compatible en linea 8
+	 - Tipo BOOLEAN no compatible en linea 16
+	 - Tipo BOOLEAN no compatible en linea 32
+-> No se pudo proseguir con la compilacion

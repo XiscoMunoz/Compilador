@@ -1,0 +1,132 @@
+Symbol: DECLARE
+Symbol: LKEY
+Symbol: RKEY
+Symbol: MAIN
+Symbol: LKEY
+Symbol: BOOL
+Symbol: ID Valor: vTrue
+Symbol: IGUAL
+Symbol: BOLEAN Valor: true
+Symbol: PUNTYCOMA
+Symbol: BOOL
+Symbol: ID Valor: vFalse
+Symbol: IGUAL
+Symbol: BOLEAN Valor: false
+Symbol: PUNTYCOMA
+Symbol: INT
+Symbol: ID Valor: nMayor
+Symbol: IGUAL
+Symbol: NUMERO Valor: 100
+Symbol: PUNTYCOMA
+Symbol: INT
+Symbol: ID Valor: nMenor
+Symbol: IGUAL
+Symbol: NUMERO Valor: -1
+Symbol: PUNTYCOMA
+Symbol: IF
+Symbol: LPAREN
+Symbol: ID Valor: nMayor
+Symbol: MAYORQUE
+Symbol: ID Valor: nMenor
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: 1
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: IF
+Symbol: LPAREN
+Symbol: ID Valor: nMayor
+Symbol: MENORQUE
+Symbol: ID Valor: nMenor
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: 2
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: IF
+Symbol: LPAREN
+Symbol: ID Valor: nMayor
+Symbol: NIGUALES
+Symbol: ID Valor: nMenor
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: 3
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: IF
+Symbol: LPAREN
+Symbol: NUMERO Valor: 0
+Symbol: IGUALES
+Symbol: NUMERO Valor: 0
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: 4
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: IF
+Symbol: LPAREN
+Symbol: ID Valor: nMayor
+Symbol: MAYORIGU
+Symbol: NUMERO Valor: 100
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: 5
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: IF
+Symbol: LPAREN
+Symbol: ID Valor: nMenor
+Symbol: MENORIGU
+Symbol: NUMERO Valor: -1
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: 6
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: IF
+Symbol: LPAREN
+Symbol: ID Valor: vTrue
+Symbol: OR
+Symbol: ID Valor: vFalse
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: 7
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: IF
+Symbol: LPAREN
+Symbol: ID Valor: vTrue
+Symbol: AND
+Symbol: ID Valor: vFalse
+Symbol: RPAREN
+Symbol: LKEY
+Symbol: OUT
+Symbol: LPAREN
+Symbol: NUMERO Valor: 8
+Symbol: RPAREN
+Symbol: PUNTYCOMA
+Symbol: RKEY
+Symbol: RKEY
+Symbol: EOF
+Symbol: EOF

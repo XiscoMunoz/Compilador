@@ -1,0 +1,24 @@
+declare{
+    const bool a = true;
+}main{
+    a = false; #Se intenta asignar un valor a una constante.
+    int condicion1 = input();
+    int condicion2 = input();
+    int incremento = 0;
+    int indice1 = 0;
+    int indice2 = 0;
+    do{
+
+        while(indice2 < a){ # Se intenta comparar un entero con un booleano.
+            indice2 = indice2 + 1;
+            incremento = incremento + 1;
+        }
+        
+    indice1 = indice1 + 1;
+    indice2 = 0;
+
+    }while(indice1< condicion1);
+
+    output(incremento);
+
+}
